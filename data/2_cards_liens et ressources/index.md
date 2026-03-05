@@ -1,5 +1,5 @@
 ---
-uuid: c88afee0-cea4-4285-a627-47abdb6d95de
+uuid: 361da67d-b126-468c-a7c6-b4f034fe0c43
 title: "Liens et ressources"
 ---
  Toutes nos ressources.

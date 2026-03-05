@@ -1,5 +1,5 @@
 ---
-uuid: 47b2ee8d-0184-4108-914e-bc5f86fef87b
+uuid: 9d138a48-b9b3-40ee-b18b-11a22267e333
 title: "Publications"
 ---
  Toutes les dernières publications du laboratoire.

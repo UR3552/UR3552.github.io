@@ -7,6 +7,8 @@ import uuid
 DATA_DIR: Path = Path("../") / "data" 
 MEMBER_DIR: Path = DATA_DIR / '4_longcards_membres'
 EVENT_DIR: Path = DATA_DIR / "1_cards_événements"
+PROJECT_DIR: Path = DATA_DIR / "2_cards_projet en cours"
+ACCUEIL_DIR: Path = DATA_DIR / "0_cards_accueil"
 SPLIT_PATTERN: str = r"\s|\'|\-|\_|«|»|,"
 IMAGE_PATH = "./avatar.webp"
 IGNORE_MEMBER_COLUMNS = ["Nom d'utilisateur", "Prénom et Nom", "Fonction"]
@@ -96,6 +98,41 @@ def csv_to_markdown_events(csv_file: str, main_header: str = "Titre", author_hea
     return
 
 
+def csv_to_markdown_project(csv_file: str, main_header: str = "Titre", author_header: str = "Organisateur(s)", abstract_header: str = "Descriptif", photo_header: str = "Photo"):
+    global PROJECT_DIR
+    with open(csv_file, mode="r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter=";")
+        for row in reader:
+            d, m , y = row['Date'].split('/')
+            date_str = f'{y}-{m}-{d}'
+            title: str = clean_folder_name(row[main_header])
+            folder_name = date_str + "_" + title
+            event_subdir: Path = PROJECT_DIR / folder_name
+            event_subdir.mkdir(parents=True, exist_ok=True)
+            
+            with (event_subdir / "index.md").open(mode="w", encoding="utf-8") as md_file:
+                md_file.write(generate_markdown_page_event(event_dict=row, main_header=main_header,
+                              author_header=author_header, abstract_header=abstract_header, photo_header=photo_header))
+    return
+
+def csv_to_markdown_accueil(csv_file: str, main_header: str = "Titre", author_header: str = "Organisateur(s)", abstract_header: str = "Descriptif", photo_header: str = "Photo"):
+    global ACCUEIL_DIR
+    with open(csv_file, mode="r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter=";")
+        for row in reader:
+            d, m , y = row['Date'].split('/')
+            date_str = f'{y}-{m}-{d}'
+            title: str = clean_folder_name(row[main_header])
+            folder_name = date_str + "_" + title
+            event_subdir: Path = ACCUEIL_DIR / folder_name
+            event_subdir.mkdir(parents=True, exist_ok=True)
+            
+            with (event_subdir / "index.md").open(mode="w", encoding="utf-8") as md_file:
+                md_file.write(generate_markdown_page_event(event_dict=row, main_header=main_header,
+                              author_header=author_header, abstract_header=abstract_header, photo_header=photo_header))
+    return
+
+
 def csv_to_markdown_categories(csv_file_categories):
     with open(csv_file_categories, newline='', encoding='utf-8') as file:
         reader = csv.DictReader(file, delimiter=';')
@@ -155,10 +192,10 @@ csv_file_liens = "./inputs/liens_ressources.csv"
 csv_file_categories = "./inputs/categories.csv"
 
 csv_to_markdown_categories(csv_file_categories)
-csv_to_markdown_events(csv_file_accueil)
+csv_to_markdown_accueil(csv_file_accueil)
 csv_to_markdown_members(csv_file_member)
 csv_to_markdown_events(csv_file_event)
-csv_to_markdown_events(csv_file_projets)
+csv_to_markdown_project(csv_file_projets)
 csv_to_markdown_events(csv_file_liens)
 
 
