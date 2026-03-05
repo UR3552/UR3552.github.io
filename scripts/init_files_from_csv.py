@@ -149,9 +149,16 @@ print("Dossiers et fichiers créés avec succès.")
 # Example usage:
 csv_file_member = './inputs/members.csv'
 csv_file_event = "./inputs/calendar.csv"
+csv_file_accueil = "./inputs/accueil.csv"
+csv_file_projets = "./inputs/projets.csv"
+csv_file_liens = "./inputs/liens_ressources.csv"
 csv_file_categories = "./inputs/categories.csv"
 
 csv_to_markdown_categories(csv_file_categories)
+csv_to_markdown_members(csv_file_accueil)
 csv_to_markdown_members(csv_file_member)
 csv_to_markdown_events(csv_file_event)
+csv_to_markdown_events(csv_file_projets)
+csv_to_markdown_events(csv_file_liens)
+
 

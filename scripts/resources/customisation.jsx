@@ -2,29 +2,29 @@ import * as React from 'react'
 
 export const Introduction = () => { return (
     <div className="landing-block text">
-        <h2>Template de site académique de la Fac de Lettres</h2>
+        <h2>Métaphysique : histoires, transformations, actualité</h2>
         <p>
-            Ce site est un modèle pour les sites de laboratoire de <a href="https://lettres.sorbonne-universite.fr/">Faculté des Lettres de Sorbonne Université</a>.
-                Il a pour vocation d'être un exemple modifiable afin de mettre en place aisément des sites web permettant de publier billets de blogs et mettre en avant des événements liés à l'activité d'un laboratoire.
+            L’unité de recherche “Métaphysique : histoires, transformations, actualité” (UR 3552) de Sorbonne Université 
+            est dédiée à l’étude de la métaphysique, de l’histoire de la philosophie et de la philosophie de l’art. 
+            Son champ de recherche s’étend de la philosophie de l’Antiquité tardive et du haut Moyen Âge jusqu’à la période contemporaine
         </p>
         <p>
-            Fonctionnalités principales
+            L’unité est structurée autour de quatre centres :
             <ul>
-                <li> Publier du contenu à partir de simples fichiers markdown </li>
-                <li> Mise en avant d'événements </li>
-                <li> Gestion facilitée de membres </li>
+                <li> <b>Centre Pierre Abélard </b>: spécialisé dans l’histoire de la philosophie médiévale, les éditions critiques de textes à partir de manuscrits et l’accueil de chercheurs internationaux. </li>
+                <li> <b>Centre d’Études Cartésiennes</b> : consacré aux études cartésiennes, à l’édition de textes et à la bibliographie cartésienne. </li>
+                <li> <b>Centre Victor Basch</b> : orienté vers l’expérience esthétique à l’épreuve de l’art contemporain, les relations entre art et médecine, ainsi que l’histoire et l’épistémologie de l’esthétique.</li>
+                <li> <b>Centre Emmanuel Levinas</b> : focalisé sur la phénoménologie, la métaphysique et la pensée juive contemporaine. </li>                
             </ul>
         </p>
-        <p>
-            Ce template a été créé par les ingénieurs de <a href="ceres.sorbonne-universite.fr">l'unité de service du CERES</a>.
-        </p>
+        
     </div>
 )}
 
 export const Footer = () => (
     <footer id="footer">
         <div className="footer-block">
-            <p>LABO - Site statique pour le laboratoire</p>
+            <p>UR 3552</p>
             <p>Faculté des Lettres de Sorbonne Université</p>
             <a href='https://lettres.sorbonne-universite.fr/'>
                 <svg className="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.93 198.34">
@@ -33,8 +33,8 @@ export const Footer = () => (
             </a>
         </div>
         <div className="footer-block">
-            <p> Pour nous rendre visite : Maison de la Recherche, 28 rue Serpente,
-                75006 Paris, Bureau S007.
+            <p> Pour nous rendre visite : Sorbonne-Université, 1 rue Victor Cousin,
+                75005 Paris, Bureau S007.
             </p>
             <p>Pour nous contacter : <a href="mailto:le-mail-de-mon-labo@sorbonne-universite.fr">le-mail-de-mon-labo@sorbonne-universite.fr</a></p>
         </div>
