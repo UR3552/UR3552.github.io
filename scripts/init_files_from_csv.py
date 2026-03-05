@@ -155,7 +155,7 @@ csv_file_liens = "./inputs/liens_ressources.csv"
 csv_file_categories = "./inputs/categories.csv"
 
 csv_to_markdown_categories(csv_file_categories)
-csv_to_markdown_members(csv_file_accueil)
+csv_to_markdown_events(csv_file_accueil)
 csv_to_markdown_members(csv_file_member)
 csv_to_markdown_events(csv_file_event)
 csv_to_markdown_events(csv_file_projets)
